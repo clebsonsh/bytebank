@@ -9,5 +9,8 @@ public class AccountFactory {
 
         System.out.println("First account has: $" + firstAccount.balance);
         System.out.println("Secound account has: $" + secondAccount.balance);
+
+        System.out.println(firstAccount.agency);
+        System.out.println(secondAccount.agency);
     }
 }

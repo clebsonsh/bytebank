@@ -1,6 +1,6 @@
 public class Account {
     double balance;
-    int agency;
+    int agency = 42;
     int number;
     String owner;
 }

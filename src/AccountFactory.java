@@ -1,11 +1,13 @@
 public class AccountFactory {
     public static void main(String[] args) {
         Account firstAccount = new Account();
-        firstAccount.balance = 120.50;
-        firstAccount.balance += 79.50;
+        firstAccount.deposit(120.50);
+        firstAccount.withdraw(10.50);
 
         Account secondAccount = new Account();
-        secondAccount.balance = 50.00;
+        secondAccount.deposit(50.00);
+
+        firstAccount.transferTo(secondAccount, 20);
 
         System.out.println("First account has: $" + firstAccount.balance);
         System.out.println("Secound account has: $" + secondAccount.balance);

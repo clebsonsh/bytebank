@@ -6,14 +6,32 @@ public class Account {
 
     public void deposit(double amount) {
         this.balance += amount;
+        System.out.println("Deposit successful");
     }
 
-    public void withdraw(double amount) {
+    public boolean withdraw(double amount) {
+        if (this.balance < amount) {
+            System.out.println("Not enough balance to withdraw");
+            return false;
+        }
+
         this.balance -= amount;
+        System.out.println("Withdraw successful");
+
+        return true;
     }
 
-    public void transferTo(Account targetAccount, double amount) {
-        this.withdraw(amount);
+    public boolean transferTo(double amount, Account targetAccount) {
+        boolean isWithdrawSuccessful = this.withdraw(amount);
+
+        if (!isWithdrawSuccessful) {
+            System.out.println("Not enough balance to transfer");
+            return false;
+        }
+
         targetAccount.deposit(amount);
+        System.out.println("Transfer successful");
+
+        return true;
     }
 }

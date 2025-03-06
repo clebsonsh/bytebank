@@ -15,5 +15,7 @@ public class AccountFactory {
         for (Account account : accounts) {
             System.out.println(account.getOwner().getName() + " account has: $" + account.getBalance());
         }
+
+        System.out.println("Total accounts: " + Account.getTotalAccounts());
     }
 }

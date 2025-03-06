@@ -4,6 +4,8 @@ public class Account {
     private int number;
     private Customer owner;
 
+    private static int totalAccounts = 0;
+
     public Account(int agency, int number, Customer owner) {
         if (agency <= 0) {
             System.out.println("Agency must be greater than 0");
@@ -18,6 +20,12 @@ public class Account {
         this.agency = agency;
         this.number = number;
         this.owner = owner;
+
+        Account.totalAccounts++;
+    }
+
+    public static int getTotalAccounts() {
+        return Account.totalAccounts;
     }
 
     public double getBalance() {

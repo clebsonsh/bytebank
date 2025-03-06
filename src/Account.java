@@ -2,7 +2,6 @@ public class Account {
     private double balance;
     private int agency;
     private int number;
-
     private Customer owner;
 
     public double getBalance() {

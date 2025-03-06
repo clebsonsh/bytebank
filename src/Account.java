@@ -2,7 +2,7 @@ public class Account {
     double balance;
     int agency = 42;
     int number;
-    String owner;
+    Customer owner;
 
     public void deposit(double amount) {
         this.balance += amount;

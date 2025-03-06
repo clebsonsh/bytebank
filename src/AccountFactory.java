@@ -3,15 +3,14 @@ public class AccountFactory {
         Account paulAccount = new Account();
         Customer paul = new Customer();
         paul.name = "Paul";
-        paulAccount.owner = paul;
+        paulAccount.setOwner(paul);
         paulAccount.deposit(120.50);
 
         paulAccount.withdraw(10.50);
 
         Account maryAccount = new Account();
-        Customer mary = new Customer();
-        mary.name = "Mary";
-        maryAccount.owner = mary;
+        maryAccount.setOwner(new Customer());
+        maryAccount.getOwner().name = "Mary";
         maryAccount.deposit(50.00);
 
         paulAccount.transferTo(200, maryAccount);
@@ -19,7 +18,7 @@ public class AccountFactory {
         Account[] accounts = { paulAccount, maryAccount };
 
         for (Account account : accounts) {
-            System.out.println(account.owner.name + " account has: $" + account.balance);
+            System.out.println(account.getOwner().name + " account has: $" + account.getBalance());
         }
     }
 }

@@ -3,6 +3,12 @@ public class Customer {
     private String cpf;
     private String profession;
 
+    public Customer(String name, String cpf, String profession) {
+        this.name = name;
+        this.cpf = cpf;
+        this.profession = profession;
+    }
+
     public String getName() {
         return this.name;
     }

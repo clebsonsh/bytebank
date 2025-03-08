@@ -1,10 +1,10 @@
 public class Employee {
     private String name;
     private String cpf;
-    protected double salary;
+    private double salary;
 
     public double getBonus() {
-        return this.salary * 0.1;
+        return this.salary * 0.05;
     }
 
     public String getName() {

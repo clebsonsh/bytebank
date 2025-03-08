@@ -9,7 +9,7 @@ public class BonusFactory {
         clebson.setCpf("666.777.888-99");
         clebson.setSalary(2500.00);
 
-        Employee gabriel = new Employee();
+        Developer gabriel = new Developer();
         gabriel.setName("Gabriel");
         gabriel.setCpf("123.456.789-00");
         gabriel.setSalary(2000.00);

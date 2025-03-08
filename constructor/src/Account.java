@@ -1,4 +1,4 @@
-public class Account {
+public abstract class Account {
     private double balance;
     private int agency;
     private int number;
@@ -24,35 +24,7 @@ public class Account {
         Account.totalAccounts++;
     }
 
-    public static int getTotalAccounts() {
-        return Account.totalAccounts;
-    }
-
-    public double getBalance() {
-        return this.balance;
-    }
-
-    public int getAgency() {
-        return this.agency;
-    }
-
-    public int getNumber() {
-        return this.number;
-    }
-
-    public Customer getOwner() {
-        return this.owner;
-    }
-
-    public void deposit(double amount) {
-        if (amount <= 0) {
-            System.out.println("Deposit amount must be greater than 0");
-            return;
-        }
-
-        this.balance += amount;
-        System.out.println("Deposit successful");
-    }
+    public abstract void deposit(double amount);
 
     public boolean withdraw(double amount) {
         if (amount <= 0) {
@@ -81,5 +53,29 @@ public class Account {
 
         targetAccount.deposit(amount);
         System.out.println("Transfer successful");
+    }
+
+    public static int getTotalAccounts() {
+        return Account.totalAccounts;
+    }
+
+    public double getBalance() {
+        return this.balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public int getAgency() {
+        return this.agency;
+    }
+
+    public int getNumber() {
+        return this.number;
+    }
+
+    public Customer getOwner() {
+        return this.owner;
     }
 }

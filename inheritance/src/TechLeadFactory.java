@@ -3,11 +3,9 @@ public class TechLeadFactory {
         TechLead techLead = new TechLead();
         techLead.setName("Clebson Moura");
         techLead.setCpf("123.456.789-00");
-        techLead.setSalary(1730.00);
 
         System.out.println("Employee name: " + techLead.getName());
         System.out.println("Employee CPF: " + techLead.getCpf());
-        System.out.println("Employee salary: " + techLead.getSalary());
         System.out.println("Employee bonus: " + techLead.getBonus());
     }
 }

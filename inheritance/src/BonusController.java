@@ -8,5 +8,4 @@ public class BonusController {
     public double getTotalBonus() {
         return this.totalBonus;
     }
-
 }

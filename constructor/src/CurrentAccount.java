@@ -1,4 +1,4 @@
-public class CurrentAccount extends Account {
+public class CurrentAccount extends Account implements Taxable {
     public CurrentAccount(int agency, int number, Customer owner) {
         super(agency, number, owner);
     }
@@ -19,5 +19,10 @@ public class CurrentAccount extends Account {
         double amountWithTax = amount + 0.2;
 
         return super.withdraw(amountWithTax);
+    }
+
+    @Override
+    public double getTax() {
+        return super.getBalance() * 0.01;
     }
 }

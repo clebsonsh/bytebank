@@ -1,6 +1,6 @@
-public abstract class AuthenticableEmployee extends Employee {
+public class AuthenticationUtil {
     private int password;
-
+    
     public boolean authenticate(int password) {
         if (this.password == password) {
             System.out.println("Access allowed!");
@@ -9,10 +9,6 @@ public abstract class AuthenticableEmployee extends Employee {
             System.out.println("Access denied!");
             return false;
         }
-    }
-
-    public int getPassword() {
-        return this.password;
     }
 
     public void setPassword(int password) {

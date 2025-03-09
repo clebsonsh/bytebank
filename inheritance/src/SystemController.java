@@ -1,7 +1,7 @@
 public class SystemController {
-    public void authenticate(AuthenticableEmployee authenticableEmployee) {
+    public void authenticate(Authenticable authenticable) {
         int password = 1227;
-        boolean authenticated = authenticableEmployee.authenticate(password);
+        boolean authenticated = authenticable.authenticate(password);
 
         if (!authenticated) {
             System.out.println("Can't access the system");

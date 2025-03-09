@@ -1,13 +1,8 @@
-public class Manager extends Employee implements Authenticable {
+public class Customer implements Authenticable {
     private final AuthenticationUtil authenticator;
 
-    public Manager() {
+    public Customer() {
         this.authenticator = new AuthenticationUtil();
-    }
-
-    @Override
-    public double getBonus() {
-        return super.getSalary();
     }
 
     @Override

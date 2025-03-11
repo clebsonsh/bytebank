@@ -1,7 +1,13 @@
 public class Flux {
     public static void main(String[] args) {
         System.out.println("Main started");
-        method1();
+        try {
+            method1();
+        } catch (ArithmeticException | NullPointerException e) {
+            String msg = e.getMessage();
+            System.out.println("Exception message: " + msg);
+            e.printStackTrace();
+        }
         System.out.println("end of main");
     }
 
@@ -15,6 +21,9 @@ public class Flux {
         System.out.println("Method2 started");
         for (int i = 1; i <= 5; i++) {
             System.out.println(i);
+
+            Account account = null;
+            account.deposit(i);
         }
         System.out.println("end of method2");
     }

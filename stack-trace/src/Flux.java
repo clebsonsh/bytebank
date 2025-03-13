@@ -3,7 +3,7 @@ public class Flux {
         System.out.println("Main started");
         try {
             method1();
-        } catch (ArithmeticException | NullPointerException | MyException e) {
+        } catch (Exception e) {
             String msg = e.getMessage();
             System.out.println("Exception message: " + msg);
             e.printStackTrace();

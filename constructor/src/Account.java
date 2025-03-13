@@ -1,10 +1,9 @@
 public abstract class Account {
+    private static int totalAccounts = 0;
     private double balance;
     private int agency;
     private int number;
     private Customer owner;
-
-    private static int totalAccounts = 0;
 
     public Account(int agency, int number, Customer owner) {
         if (agency <= 0) {
@@ -24,39 +23,27 @@ public abstract class Account {
         Account.totalAccounts++;
     }
 
+    public static int getTotalAccounts() {
+        return Account.totalAccounts;
+    }
+
     public abstract void deposit(double amount);
 
-    public boolean withdraw(double amount) {
+    public void withdraw(double amount) {
         if (amount <= 0) {
-            System.out.println("Withdraw amount must be greater than 0");
-            return false;
+            throw new InsufficientBalanceException("Withdraw amount must be greater than 0");
         }
 
         if (this.balance < amount) {
-            System.out.println("Not enough balance to withdraw");
-            return false;
+            throw new InsufficientBalanceException("Not enough balance to withdraw");
         }
 
         this.balance -= amount;
-        System.out.println("Withdraw successful");
-
-        return true;
     }
 
     public void transferTo(double amount, Account targetAccount) {
-        boolean isWithdrawSuccessful = this.withdraw(amount);
-
-        if (!isWithdrawSuccessful) {
-            System.out.println("Not enough balance to transfer");
-            return;
-        }
-
+        this.withdraw(amount);
         targetAccount.deposit(amount);
-        System.out.println("Transfer successful");
-    }
-
-    public static int getTotalAccounts() {
-        return Account.totalAccounts;
     }
 
     public double getBalance() {

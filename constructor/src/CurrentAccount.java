@@ -15,10 +15,10 @@ public class CurrentAccount extends Account implements Taxable {
     }
 
     @Override
-    public boolean withdraw(double amount) {
+    public void withdraw(double amount) {
         double amountWithTax = amount + 0.2;
 
-        return super.withdraw(amountWithTax);
+        super.withdraw(amountWithTax);
     }
 
     @Override

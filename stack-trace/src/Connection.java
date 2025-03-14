@@ -1,4 +1,4 @@
-public class Connection {
+public class Connection implements AutoCloseable {
     public Connection() {
         System.out.println("Opening Connection");
     }

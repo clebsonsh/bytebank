@@ -1,12 +1,9 @@
 public class ConnectionFactory {
     public static void main(String[] args) {
-        Connection connection = new Connection();
-        try {
+        try (Connection connection = new Connection()) {
             connection.readData();
         } catch (IllegalStateException e) {
             System.out.println("Connection failed");
-        } finally {
-            connection.close();
         }
     }
 }

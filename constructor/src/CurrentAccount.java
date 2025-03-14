@@ -15,7 +15,7 @@ public class CurrentAccount extends Account implements Taxable {
     }
 
     @Override
-    public void withdraw(double amount) {
+    public void withdraw(double amount) throws InsufficientBalanceException {
         double amountWithTax = amount + 0.2;
 
         super.withdraw(amountWithTax);

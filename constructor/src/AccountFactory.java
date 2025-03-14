@@ -8,7 +8,11 @@ public class AccountFactory {
         CurrentAccount clebsonAccount = new CurrentAccount(42, 2, clebson);
         clebsonAccount.deposit(200);
 
-        clebsonAccount.transferTo(100, palomaAccount);
+        try {
+            clebsonAccount.transferTo(200, palomaAccount);
+        } catch (InsufficientBalanceException e) {
+            System.out.println("Ex: " + e.getMessage());
+        }
 
         System.out.println(clebsonAccount.getOwner().getName() + " Account Balance: " + clebsonAccount.getBalance());
         System.out.println(palomaAccount.getOwner().getName() + " Account Balance: " + palomaAccount.getBalance());

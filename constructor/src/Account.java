@@ -29,7 +29,7 @@ public abstract class Account {
 
     public abstract void deposit(double amount);
 
-    public void withdraw(double amount) {
+    public void withdraw(double amount) throws InsufficientBalanceException {
         if (amount <= 0) {
             throw new InsufficientBalanceException("Withdraw amount must be greater than 0");
         }
@@ -41,7 +41,7 @@ public abstract class Account {
         this.balance -= amount;
     }
 
-    public void transferTo(double amount, Account targetAccount) {
+    public void transferTo(double amount, Account targetAccount) throws InsufficientBalanceException {
         this.withdraw(amount);
         targetAccount.deposit(amount);
     }
